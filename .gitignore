@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+
+# EasyOCR model cache
+*.pt
+
+# User's raw learning materials (do not commit)
+materials/input/*.pdf
+materials/input/*.docx
+materials/input/*.xlsx
+materials/input/*.csv
+materials/input/*.txt
+!materials/input/README.txt
+
+# Generated data (created by the skills at runtime)
+course.json
+progress.json
+materials/vocabulary.json
+materials/grammar.json
+materials/topics.json
+materials/chapters/
+
+# Claude Code local settings
+.claude/settings.local.json

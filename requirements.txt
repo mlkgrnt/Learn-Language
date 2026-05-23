@@ -1,0 +1,15 @@
+# Language Learning Assistant - Dependencies
+
+# PDF processing
+pymupdf>=1.24.0          # Read and extract text from PDF files
+pymupdf4llm>=0.0.17      # Convert PDF to markdown with structure preservation
+
+# Encoding detection (for non-UTF-8 text/CSV files)
+chardet>=5.0.0           # Detect character encoding (GBK, Shift-JIS, EUC-KR, etc.)
+
+# Office document support
+python-docx>=0.8.11      # Read .docx files (Word documents)
+openpyxl>=3.1.0          # Read .xlsx files (Excel spreadsheets)
+
+# OCR for scanned PDFs
+easyocr>=1.7.0           # Multi-language OCR (supports 80+ languages, no external engine needed)

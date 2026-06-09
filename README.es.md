@@ -2,14 +2,27 @@
 
 Un sistema interactivo de aprendizaje de idiomas para [Claude Code](https://claude.ai/code), impulsado por IA. Importa tus propios materiales didácticos, extrae contenido de aprendizaje estructurado y sigue un plan de estudios personalizado — todo mediante conversación natural.
 
+## Novedades en v2
+
+| Característica | v1 | v2 |
+|----------------|----|----|
+| Archivos de estado | `progress.json` + `course.json` | Un solo `state.json` |
+| Sistema de repaso | Ninguno | Repetición espaciada (puntuaciones de dominio, repasos automáticos) |
+| Modo práctica | N/A | `/practise` — conversación libre + corrección en tiempo real |
+| Lecciones de repaso | Ninguna | Cada 5.ª lección es de repaso |
+| Volver al curso | Flujo de configuración completo otra vez | Continuación automática con tarjeta de progreso |
+| Plantillas de lecciones | Formato rígido | Impulsadas por ejemplos, flexibles |
+| Calentamiento de vocabulario | Ninguno | Repasar palabras antiguas antes de las nuevas |
+
 ## Características
 
-Dos skills independientes que trabajan juntos:
+Tres comandos que trabajan juntos:
 
-| Skill | Comando | Función |
-|-------|---------|---------|
-| **Procesador de Materiales** | `/process-material` | Importar materiales (PDF, Word, Excel, etc.), convertir a datos estructurados |
-| **Tutor de Idiomas** | `/learn-language` | Lecciones interactivas con ejercicios, seguimiento de progreso, ritmo adaptativo |
+| Comando | Función |
+|---------|---------|
+| `/process-material` | Importar materiales (PDF, Word, Excel, etc.), convertir a datos estructurados |
+| `/learn-language` | Lecciones interactivas con ejercicios, repetición espaciada, ritmo adaptativo |
+| `/practise` | Conversación libre en el idioma objetivo con corrección en tiempo real |
 
 El sistema soporta **cualquier combinación de idiomas** — detecta tu idioma nativo a partir de la conversación y adapta todas las interacciones en consecuencia.
 
@@ -94,11 +107,12 @@ O salta directamente a un idioma y nivel específico:
 ```
 
 El skill:
-1. Busca materiales procesados (o usa el currículo CEFR integrado)
-2. Investiga las horas de estudio necesarias para tu nivel objetivo
-3. Genera una secuencia de lecciones personalizada
-4. Ejecuta lecciones interactivas con ejercicios y retroalimentación
-5. Guarda el progreso automáticamente después de cada lección
+1. Busca progreso existente (`state.json`) — continúa automáticamente si lo encuentra
+2. Para cursos nuevos: analiza materiales, investiga horas, genera secuencia de lecciones
+3. Ejecuta lecciones interactivas con ejercicios y retroalimentación
+4. Aplica repetición espaciada — vocabulario y gramática obtienen puntuaciones de dominio
+5. Programa lecciones de repaso cada 5 lecciones
+6. Guarda el progreso automáticamente después de cada lección
 
 ## Formatos de Archivo Soportados
 
@@ -143,11 +157,7 @@ materials/                         # Capa de datos compartida
 └── topics.json                    # Pasajes de lectura extraídos
 
 requirements.txt                   # Dependencias de Python
-setup.py                           # Script de instalación multiplataforma
-setup.sh                           # Script de instalación Linux / Mac
-setup.bat                          # Script de instalación Windows
-course.json                        # Plan de estudios generado
-progress.json                      # Progreso de aprendizaje
+state.json                         # Plan de estudios + progreso unificado (v2)
 ```
 
 ## Cómo Funciona
@@ -155,14 +165,10 @@ progress.json                      # Progreso de aprendizaje
 ### Pipeline de Procesamiento de Materiales
 
 ```
-Archivo Crudo → Detección de Formato → Conversión → División en Capítulos → Extrucción Estructurada → JSON
+Archivo Crudo → Detección de Formato → Conversión → División en Capítulos → Extracción Estructurada → JSON
 ```
 
-Cada tipo de extracción sigue plantillas estrictas con:
-- Reglas claras sobre qué extraer
-- Criterios de estimación de nivel CEFR
-- Referencias cruzadas entre vocabulario, gramática y pasajes
-- Listas de verificación de calidad
+Cada tipo de extracción sigue plantillas estrictas con reglas claras, estimación de nivel CEFR, referencias cruzadas y listas de verificación de calidad.
 
 ### Motor de Aprendizaje
 
@@ -171,25 +177,32 @@ Idioma + Nivel → Análisis Curricular → Investigación de Horas → Secuenci
 ```
 
 Los tipos de lección se alternan a lo largo de la secuencia:
-- **Vocabulario**: 5-10 palabras nuevas con pronunciación, ejemplos, colocaciones
+- **Vocabulario**: 5-10 palabras nuevas con pronunciación, ejemplos, calentamiento con palabras anteriores
 - **Gramática**: Explicación de reglas, patrones, ejemplos, errores comunes
 - **Lectura**: Pasajes con preguntas de comprensión
 - **Cultura**: Temas culturales, materiales auténticos, juegos de rol
 - **Escritura**: Análisis de textos modelo, escritura guiada, retroalimentación estructurada
+- **Repaso** (cada 5 lecciones): Repetición espaciada de vocabulario y gramática por debajo del umbral de dominio
+
+### Repetición Espaciada
+
+Cada palabra y punto gramatical tiene:
+- **Puntuación de dominio**: Comienza en 0, aumenta con respuestas correctas, disminuye con errores
+- **Fecha del próximo repaso**: Programada automáticamente según el rendimiento
+- **Conteo de repasos**: Seguimiento de cuántas veces se ha repasado el elemento
+
+Las palabras con dominio inferior al 80% se incluyen automáticamente en calentamientos y lecciones de repaso.
 
 ### Seguimiento de Progreso
 
-Después de cada lección, el progreso se guarda en `progress.json`:
-- Palabras aprendidas con niveles de dominio
-- Puntos gramaticales cubiertos
-- Áreas débiles identificadas
-- Historial de sesiones
-
-El progreso persiste entre sesiones — retoma donde lo dejaste en cualquier momento.
+Todo el estado vive en un solo `state.json`:
+- Plan de estudios (total de lecciones, secuencia, posición actual)
+- Vocabulario con puntuaciones de dominio y fechas de repaso
+- Puntos gramaticales con puntuaciones de dominio y fechas de repaso
+- Áreas débiles e historial de sesiones
+- Continuación automática al volver — no necesitas reconfigurar
 
 ## Niveles CEFR
-
-El sistema utiliza el Marco Común Europeo de Referencia para las Lenguas:
 
 | Nivel | Vocabulario | Descripción |
 |-------|-------------|-------------|
@@ -200,10 +213,7 @@ El sistema utiliza el Marco Común Europeo de Referencia para las Lenguas:
 | C1 | ~6.000+ palabras | Avanzado — textos exigentes, significado implícito |
 | C2 | ~8.000+ palabras | Dominio — prácticamente todo lo escuchado o leído |
 
-Las horas de estudio se estiman basándose en la investigación de Cambridge English y se ajustan según:
-- Dificultad de la combinación de idiomas (idiomas relacionados son más rápidos)
-- Cobertura de materiales importados (reduce horas si se usan materiales)
-- Nivel actual del usuario
+Las horas de estudio se estiman basándose en la investigación de Cambridge English y se ajustan según la dificultad de la combinación de idiomas, la cobertura de materiales importados y el nivel actual del usuario.
 
 ## Licencia
 

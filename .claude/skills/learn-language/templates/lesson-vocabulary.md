@@ -1,44 +1,31 @@
 # Vocabulary Lesson Template
 
-Use this structure when teaching new vocabulary.
+## Structure
 
-## Lesson Header
+Present 5-8 words. For each word:
 
 ```
-=== Lesson N: [Topic Name] ===
-[Language] — [Level]
-New words: [count] | Review: [count]
+**[word]** [pronunciation] (词性)
+中文含义
+例句: [target language sentence] ([translation])
+搭配: [common collocation]
 ```
 
-## Word Presentation
+## Example (Spanish)
 
-For each word, present in this format:
+1. **casa** /ˈka.sa/ (n.)
+   房子，家
+   例句: Mi casa es grande. (我的房子很大。)
+   搭配: en casa (在家)
 
-### Word: [target_language_word]
+2. **trabajar** /tɾa.βa.ˈxaɾ/ (v.)
+   工作
+   例句: Ella trabaja en un hospital. (她在医院工作。)
+   搭配: trabajar de + 职业 (从事...工作)
 
-| Field | Content |
-|-------|---------|
-| **Word** | [word in target script] |
-| **Pronunciation** | [IPA or romanization] |
-| **Part of Speech** | [noun/verb/adj/adv/etc.] |
-| **Meaning** | [native language translation] |
-| **Example** | [example sentence in target language] |
-| **Translation** | [sentence translation] |
-| **Collocations** | [common word pairings] |
-| **Note** | [usage tip, if any] |
+## Review Warmup
 
-## Exercise Block
-
-After presenting all words, run these exercises:
-
-### Exercise 1: Match
-Give the word, ask for meaning. (5 words)
-
-### Exercise 2: Fill in the Blank
-Provide sentences with blanks. (3-5 sentences)
-
-### Exercise 3: Translation
-Translate sentences using the new vocabulary. (2-3 sentences)
-
-### Exercise 4: Free Use
-Ask the user to write their own sentences using at least 3 of the new words.
+Before new words, quiz 3-5 old items:
+- Show word → user gives meaning
+- Show meaning → user gives word
+- Wrong → re-teach briefly, note for extra review

@@ -1,90 +1,44 @@
-# Cultural Exchange Lesson Template
+# Culture Lesson Template
 
-Use this structure for culture-oriented lessons. Goal: make learning fun, build cultural awareness, and motivate continued study.
+## Goal
+Fun, low-pressure. Build cultural awareness and motivation. No grading.
 
-## Lesson Header
+## Types (pick one per lesson)
 
-```
-=== Lesson N: Culture — [Topic] ===
-[Language] — [Level]
-```
+### A. Cultural Topic
+Introduce a cultural topic (festivals, food, daily life, etiquette, pop culture).
+- Brief intro in user's language (3-4 sentences)
+- 5-8 culture-specific vocabulary in target language
+- Fun fact or surprising detail
+- Discussion: "你们国家呢？" type question
 
-## Content Delivery
+### B. Authentic Material
+Analyze a real-world text: menu, ad, song lyrics, poem, social media post.
+- Show the material
+- Walk through meaning line by line
+- Highlight useful phrases or cultural context
+- Ask user to identify something specific
 
-Choose one or more of the following formats based on level and interest:
+### C. Scenario Role-play
+Simulate a real situation: ordering food, shopping, visiting someone.
+- Set the scene
+- User plays themselves, LLM plays the local person
+- Stay in character, correct errors naturally
+- Keep it short (5-8 exchanges)
 
-### Format A: Cultural Topic Introduction
+## Example (Type A — Mexican Food Culture)
 
-Present an engaging cultural topic in the target language's world:
-- Festivals and holidays
-- Food and dining culture
-- Social etiquette and taboos
-- Music, movies, pop culture
-- History snippets
-- Daily life differences
-- Humor and jokes
-- Proverbs and sayings
+🌮 **La comida mexicana**
 
-Structure:
-1. **Lead-in** — A hook question or fun fact to grab attention
-2. **Main content** — The cultural topic presented in accessible language (level-appropriate)
-3. **Key vocabulary** — 5-8 culturally relevant words with explanations
-4. **Comparison** — How does this compare to the user's culture?
-5. **Discussion prompt** — Ask the user's opinion or experience
+墨西哥菜是联合国非物质文化遗产！
 
-### Format B: Authentic Materials
+关键词汇：
+- **taco** — 塔可（玉米饼卷肉和配料）
+- **salsa** — 酱料（辣的！）
+- **aguacate** — 牛油果
+- **maíz** — 玉米
+- **chile** — 辣椒
 
-Present real-world materials from the target language:
-- Song lyrics (with vocabulary glossary)
-- Short poems or haiku
-- Menu / advertisement / sign analysis
-- Social media posts (adapted for level)
-- News headline analysis
-- Comic strip or meme discussion
+有趣的事实：墨西哥人吃芒果的时候会撒辣椒粉和柠檬汁。你觉得好吃吗？
 
-Structure:
-1. **Context** — What is this material? Where would you encounter it?
-2. **The material** — Present the authentic text/media
-3. **Guided analysis** — Walk through vocabulary, meaning, cultural context
-4. **User engagement** — What do you think? Have you seen something similar?
-
-### Format C: Cultural Scenario
-
-Present a real-life scenario and role-play it:
-- Ordering at a restaurant (culture-specific etiquette)
-- Visiting someone's home
-- Attending a ceremony or event
-- Navigating public transport
-- Shopping at a local market
-- Making small talk with locals
-
-Structure:
-1. **Scenario setup** — Describe the situation
-2. **Key phrases** — Essential expressions for this scenario
-3. **Cultural tips** — What to do / what NOT to do
-4. **Role-play** — Interactive dialogue practice (user plays a role)
-
-## Exercise Block
-
-### Exercise 1: Cultural Quiz
-3-5 fun multiple-choice or true/false questions about the topic.
-
-### Exercise 2: Vocabulary from Context
-Ask the user to guess meanings of culturally-loaded words before revealing.
-
-### Exercise 3: Cross-Cultural Reflection
-Ask: "In your culture, how is this different? What do you think about this?"
-Encourage the user to express opinions — great for practicing opinion language.
-
-### Exercise 4: Creative Output (Optional)
-- Write a social media post about the topic
-- Tell a joke in the target language
-- Describe a similar experience from their own life
-- Compare two cultures in a short paragraph
-
-## Tone
-
-- Fun and relaxed — this is the "break" lesson between heavy grammar/vocab sessions
-- Curious, not preachy — present culture as interesting differences, not right/wrong
-- Encourage questions and personal sharing
-- Use humor where appropriate
+你最喜欢什么中国菜？试着用西语描述一下？

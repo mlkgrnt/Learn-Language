@@ -2,6 +2,18 @@
 
 An interactive language learning system for [Claude Code](https://claude.ai/code), powered by AI. Import your own textbooks, extract structured learning materials, and follow a personalized curriculum — all through natural conversation.
 
+## What's New in v2
+
+| Feature | v1 | v2 |
+|---------|----|----|
+| State files | `progress.json` + `course.json` | Single `state.json` |
+| Review system | None | Spaced repetition (mastery scores, auto-scheduled reviews) |
+| Practice mode | N/A | `/practise` — free conversation with error correction |
+| Review lessons | None | Every 5th lesson is a review |
+| Returning to course | Full setup flow again | Auto-continuation with progress card |
+| Templates | Rigid format prescriptions | Example-driven, flexible |
+| Vocabulary warmup | None | Review old words before new ones |
+
 ## Features
 
 Two independent skills that work together:
@@ -9,7 +21,8 @@ Two independent skills that work together:
 | Skill | Command | What it does |
 |-------|---------|--------------|
 | **Material Processor** | `/process-material` | Import textbooks (PDF, Word, Excel, etc.), convert to structured data |
-| **Language Tutor** | `/learn-language` | Interactive lessons with exercises, progress tracking, adaptive pacing |
+| **Language Tutor** | `/learn-language` | Interactive lessons with exercises, spaced repetition, adaptive pacing |
+| **Practice Mode** | `/practise` | Free conversation in target language with real-time error correction |
 
 The system supports **any language pair** — it detects your native language from conversation and adapts all interactions accordingly.
 
@@ -94,11 +107,12 @@ Or jump directly to a specific language and level:
 ```
 
 The skill will:
-1. Check for processed materials (or use built-in CEFR curriculum)
-2. Research study hours needed for your target level
-3. Generate a personalized lesson sequence
-4. Run interactive lessons with exercises and feedback
-5. Save progress automatically after each lesson
+1. Check for existing progress (`state.json`) — auto-continues if found
+2. If new: analyze materials, research study hours, generate lesson sequence
+3. Run interactive lessons with exercises and feedback
+4. Apply spaced repetition — words and grammar points get mastery scores
+5. Schedule review lessons every 5th lesson
+6. Save progress automatically after each lesson
 
 ## Supported File Formats
 
@@ -143,11 +157,7 @@ materials/                         # Shared data layer
 └── topics.json                    # Extracted reading passages
 
 requirements.txt                   # Python dependencies
-setup.py                           # Cross-platform install script
-setup.sh                           # Linux / Mac install script
-setup.bat                          # Windows install script
-course.json                        # Generated course plan
-progress.json                      # Learning progress
+state.json                         # Unified course plan + progress (v2)
 ```
 
 ## How It Works
@@ -158,38 +168,41 @@ progress.json                      # Learning progress
 Raw File → Format Detection → Conversion → Chapter Splitting → Structured Extraction → JSON
 ```
 
-Each extraction type follows strict templates with:
-- Clear rules for what to extract
-- CEFR level estimation criteria
-- Cross-referencing between vocabulary, grammar, and passages
-- Quality checklists
+Each extraction type follows strict templates with clear rules, CEFR level estimation, cross-referencing, and quality checklists.
 
 ### Learning Engine
 
 ```
-Language + Level → Curriculum Analysis → Study Hours Research → Lesson Sequencing → Interactive Lessons
+Language + Level → Curriculum Analysis → Study Hours → Lesson Sequencing → Interactive Lessons
 ```
 
 Lesson types alternate throughout the sequence:
-- **Vocabulary**: 5-10 new words with pronunciation, examples, collocations
+- **Vocabulary**: 5-10 new words with pronunciation, examples, warmup review of old words
 - **Grammar**: Rule explanation, patterns, examples, common mistakes
 - **Reading**: Passages with comprehension questions
 - **Culture**: Cultural topics, authentic materials, scenario role-plays
 - **Writing**: Model text analysis, guided writing, structured feedback
+- **Review** (every 5th lesson): Spaced repetition of words and grammar below mastery threshold
+
+### Spaced Repetition
+
+Every vocabulary word and grammar point has:
+- **Mastery score**: Starts at 0, increases with correct answers, decreases with errors
+- **Next review date**: Scheduled automatically based on performance
+- **Review count**: Tracks how many times the item has been reviewed
+
+Words below 80% mastery are automatically pulled into warmup sections and review lessons.
 
 ### Progress Tracking
 
-After every lesson, progress is saved to `progress.json`:
-- Words learned with mastery levels
-- Grammar points covered
-- Weak areas identified
-- Session history
-
-Progress persists across sessions — pick up where you left off anytime.
+All state lives in a single `state.json`:
+- Course plan (total lessons, sequence, current position)
+- Vocabulary with mastery scores and review dates
+- Grammar points with mastery scores and review dates
+- Weak areas and session history
+- Auto-continues on return — no need to re-setup
 
 ## CEFR Levels
-
-The system uses the Common European Framework of Reference for Languages:
 
 | Level | Vocabulary | Description |
 |-------|-----------|-------------|
@@ -200,10 +213,7 @@ The system uses the Common European Framework of Reference for Languages:
 | C1 | ~6,000+ words | Advanced — demanding texts, implicit meaning |
 | C2 | ~8,000+ words | Mastery — virtually everything heard or read |
 
-Study hours are estimated based on Cambridge English research and adjusted for:
-- Language pair difficulty (e.g., related languages are faster)
-- Imported materials coverage (reduces hours if materials are used)
-- User's current level
+Study hours are estimated based on Cambridge English research and adjusted for language pair difficulty, imported materials coverage, and current level.
 
 ## License
 

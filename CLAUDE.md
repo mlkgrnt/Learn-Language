@@ -9,6 +9,8 @@ An interactive language learning system for Claude Code, split into two independ
 /learn-language English B2   # 直接跳到指定语言和等级
 
 /process-material            # 教材重构机 — 导入教材，解析提取，结构化存储
+
+/practise                    # 对话练习 — 目标语言自由对话，实时纠错
 ```
 
 ## Project Structure
@@ -42,12 +44,24 @@ materials/                         # 共享数据层（重构机写入，学习�
 ├── grammar.json                   # 提取的结构化语法
 └── topics.json                    # 提取的结构化段落
 
-requirements.txt                   # Python依赖（pymupdf, pymupdf4llm, chardet, python-docx, openpyxl, easyocr)
-course.json                        # 课程计划（学习机创建）
-progress.json                      # 学习进度（学习机创建）
+requirements.txt                   # Python依赖（pymupdf, pymupdf4llm, chardet, python-docx, openpyxl, easyocr）
+state.json                         # 统一的课程计划 + 学习进度（v2：合并了旧版的 course.json 和 progress.json）
 ```
 
 ## Workflow
 
 1. `/process-material` — 导入教材，处理完得到 `materials/` 下的结构化文件
-2. `/learn-language` — 检测已处理材料，开始学习（无材料则用内置大纲）
+2. `/learn-language` — 检测已处理材料和 `state.json`，开始学习或继续已有课程
+3. `/practise` — 任何时候想练习对话，用目标语言自由聊天，实时纠错
+
+## v2 State Format
+
+All course state lives in `state.json` (merged from the old `course.json` + `progress.json`):
+
+- `coursePlan` — total lessons, sequence, current position
+- `vocabulary[]` — words with mastery scores (0-100) and next review dates
+- `grammarPoints[]` — grammar with mastery scores and next review dates
+- `weakAreas[]` — identified weak areas
+- `lessonHistory[]` — completed lessons with performance notes
+
+Spaced repetition: vocabulary and grammar items below 80% mastery are automatically scheduled for review. Every 5th lesson is a dedicated review lesson.

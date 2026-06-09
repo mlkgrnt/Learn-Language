@@ -1,49 +1,27 @@
 # Reading Lesson Template
 
-Use this structure for reading comprehension lessons.
+## Structure
 
-## Lesson Header
+1. **Warmup** — 2-3 pre-reading questions to activate prior knowledge
+2. **Passage** — level-appropriate text (100-200 words for A1-A2, 200-400 for B1+)
+3. **Glossary** — 5-8 key words from the passage with meanings
+4. **Comprehension** — 3-4 questions (factual + inferential)
+5. **Discussion** — 1 open-ended question for free response
 
-```
-=== Lesson N: Reading — [Topic] ===
-[Language] — [Level]
-```
+## Source Priority
+1. `materials/topics.json` or `materials/chapters/` (imported from textbook)
+2. Original passage aligned with current vocabulary/grammar
 
-## Pre-Reading
+## Example Flow
 
-### Key Vocabulary
-List 5-8 words from the passage that may be unfamiliar, with translations.
+**Warmup:** 你平时去哪里买东西？描述一下你常去的商店。
 
-| Word | Pronunciation | Meaning |
-|------|---------------|---------|
-| ... | ... | ... |
+**Passage:**
+> María va al mercado cada sábado por la mañana...
 
-## The Passage
+**Glossary:** mercado (市场), comprar (买), fruta (水果)...
 
-Present a short passage (100-300 words depending on level):
-- A1-A2: 80-150 words, simple sentences
-- B1-B2: 150-300 words, complex sentences
-- C1-C2: 300+ words, authentic text
-
-Write the passage in the target language only. The user reads it first before questions.
-
-## Comprehension Questions
-
-### Literal Comprehension (What does the text say?)
-1. [Question about explicit information]
-2. [Question about sequence of events]
-
-### Inferential (What can you infer?)
-3. [Question requiring reading between the lines]
-
-### Vocabulary in Context
-4. [Ask the meaning of a word as used in the passage]
-
-### Personal Response
-5. [Ask the user's opinion or experience related to the topic]
-
-## Post-Reading Activities
-
-- Summarize the passage in the target language (user's turn)
-- Discuss the topic further
-- Related writing prompt
+**Questions:**
+1. ¿Cuándo va María al mercado? (Factual)
+2. ¿Por qué prefiere el mercado al supermercado? (Inferential)
+3. Tú, ¿prefieres ir al mercado o al supermercado? ¿Por qué? (Discussion)

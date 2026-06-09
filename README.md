@@ -12,6 +12,14 @@ Two skills: `/process-material` (import & extract) and `/learn-language` (learn 
 
 ---
 
+## What's New in v2
+
+- **Spaced repetition** — vocabulary mastery scores and grammar review scheduling built in. Every 5th lesson is a review lesson.
+- **Unified state** — `progress.json` + `course.json` merged into a single `state.json`. One file to rule them all.
+- **`/practise` mode** — free conversation in your target language with real-time error correction.
+- **Auto-continuation** — returning to a course skips setup and shows your progress card immediately.
+- **Optimized templates** — lesson templates are now example-driven, not rigid format prescriptions.
+
 ## Quick Start
 
 **One-click install:**

@@ -1,64 +1,32 @@
 # Grammar Lesson Template
 
-Use this structure when teaching grammar points.
+## Structure
 
-## Lesson Header
+1. **Rule** — explain the grammar point in user's language, 2-3 sentences max
+2. **Pattern** — table/formula (conjugation table, word order diagram, etc.)
+3. **Examples** — 3-5 sentences, each with translation
+4. **Mistake Alert** — 1-2 common errors learners make
+5. **Exercises** — see SKILL.md for exercise types
 
-```
-=== Lesson N: [Grammar Point Name] ===
-[Language] — [Level]
-```
+## Example (Spanish SER)
 
-## Presentation
+### Rule
+SER 表示"是"，用于身份、职业、国籍、特征等永久属性。
 
-### 1. Rule Explanation
-Explain the rule clearly in the user's native language. Be concise and precise.
+### Pattern
+| Pronombre | SER |
+|-----------|-----|
+| yo | soy |
+| tú | eres |
+| él/ella | es |
+| nosotros | somos |
+| ellos | son |
 
-### 2. Structure/Pattern
-Show the grammatical pattern:
-```
-[Subject] + [verb form] + [complement]
-```
+### Examples
+- Yo soy estudiante. (我是学生。)
+- Ella es mexicana. (她是墨西哥人。)
+- Nosotros somos amigos. (我们是朋友。)
 
-### 3. Conjugation Table (if applicable)
-
-| Person | Affirmative | Negative | Question |
-|--------|-------------|----------|----------|
-| I | ... | ... | ... |
-| You | ... | ... | ... |
-| He/She | ... | ... | ... |
-
-### 4. Example Sentences
-Provide 3-5 example sentences showing different uses of the grammar point.
-
-| # | Sentence | Translation | Usage Note |
-|---|----------|-------------|------------|
-| 1 | ... | ... | ... |
-| 2 | ... | ... | ... |
-| 3 | ... | ... | ... |
-
-### 5. Common Mistakes
-
-| Wrong | Right | Why |
-|-------|-------|-----|
-| ... | ... | ... |
-
-### 6. Comparison with Similar Structures
-If the grammar point is easily confused with another, show the difference.
-
-## Exercise Block
-
-### Exercise 1: Conjugation/Pattern Practice
-Give the base form, ask user to produce the correct form. (3-5 items)
-
-### Exercise 2: Fill in the Blank
-Sentences requiring the target grammar. (3-5 sentences)
-
-### Exercise 3: Error Correction
-Sentences with deliberate mistakes. (2-3 sentences)
-
-### Exercise 4: Translation
-Translate sentences requiring the target grammar. (2-3 sentences)
-
-### Exercise 5: Free Production
-Ask the user to write a short paragraph using the grammar point.
+### Mistake Alert
+❌ "Yo soy cansado" → ✅ "Yo **estoy** cansado"
+(SER 用于永久属性，ESTAR 用于临时状态)

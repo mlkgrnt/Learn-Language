@@ -1,131 +1,65 @@
 # Writing Lesson Template
 
-Use this structure for writing-focused lessons. Writing is the hardest productive skill — be supportive but honest with feedback.
+## Goal
+Build productive writing skills. Most demanding lesson type — be supportive but honest.
 
-## Lesson Header
+## Structure
 
-```
-=== Lesson N: Writing — [Topic/Genre] ===
-[Language] — [Level]
-```
+### 1. Genre Introduction (2 sentences)
+What kind of writing? (email, diary, description, story, essay)
+When/why would you write this in real life?
 
-## Phase 1: Writing Preparation
+### 2. Model Text
+Show a short example (50-100 words for A1-A2, 100-200 for B1+).
+- Highlight useful phrases with **bold**
+- Annotate structure: opening → body → closing
 
-### Genre Introduction
-Explain the type of writing the user will practice:
-- **A1-A2**: Short messages, postcards, simple diary entries, fill forms
-- **B1-B2**: Emails (formal/informal), essays, stories, reviews, letters
-- **C1-C2**: Reports, articles, argumentative essays, presentations, creative writing
-
-### Model Text
-Present a model text of the target genre. Keep it level-appropriate:
-- A1-A2: 50-80 words
-- B1-B2: 100-200 words
-- C1-C2: 200-400 words
-
-### Text Analysis
-Walk the user through the model:
-1. **Structure** — How is it organized? (opening, body, closing)
-2. **Key phrases** — Useful expressions for this genre
-3. **Register** — Formal vs. informal, and when to use each
-4. **Connectors** — Linking words appropriate to this genre
-
-### Useful Language Bank
-Provide a reference list:
+### 3. Language Bank
+Provide 5-8 useful phrases for this genre:
 - Opening phrases
-- Transition words
-- Opinion expressions
+- Transition phrases
 - Closing phrases
-- Level-appropriate connectors
+- Register-appropriate expressions (formal vs informal)
 
-## Phase 2: Guided Writing
+### 4. Guided Writing
 
-Scaffold the writing process step by step:
+**A1-A2:** Start small.
+- "Translate these 3 sentences into target language"
+- "Complete this email using the phrases above"
+- "Write 3 sentences about [topic]"
 
-### Step 1: Planning
-- Give the user a writing prompt
-- Ask them to outline their ideas first (bullet points are fine)
-- Review the outline and give brief feedback before they write
+**B1+:** More freedom.
+- "Write a paragraph about [topic]"
+- "Continue this story (3-5 sentences)"
+- "Write a reply to this message"
 
-### Step 2: Drafting
-- Ask the user to write their first draft
-- Set clear expectations:
-  - A1-A2: 5-8 sentences
-  - B1-B2: 1-2 paragraphs (80-150 words)
-  - C1-C2: 3-4 paragraphs (150-300 words)
-- Do NOT interrupt while they write — wait for the full draft
+### 5. Feedback (scored 1-5 each)
 
-### Step 3: Feedback
+| Dimension | Score | Comment |
+|-----------|-------|---------|
+| Content | X/5 | Did they address the task? |
+| Grammar | X/5 | Correct grammar usage? |
+| Vocabulary | X/5 | Appropriate word choice? |
+| Style | X/5 | Register and flow? |
 
-After receiving the draft, provide structured feedback:
+Then show the corrected version with explanations for each change.
 
-#### Content & Structure
-- Does it address the prompt?
-- Is it logically organized?
-- Are all parts present (opening, body, closing)?
+### 6. Revision
+Ask the user to revise based on feedback. If they do, re-evaluate.
+If they want to move on, note the weak areas for future lessons.
 
-#### Grammar & Vocabulary
-- Highlight errors with corrections
-- Note patterns of repeated mistakes
-- Suggest better word choices where appropriate
-- Praise good usage — point out what works well
+## Example Flow
 
-#### Register & Style
-- Is the tone appropriate for the genre?
-- Are connectors used effectively?
-- Is the level of formality consistent?
+**Genre:** 写一封简单的邮件，邀请朋友周末出去玩。
 
-**Feedback format:**
+**Model:**
+> Querida Ana, ¿Cómo estás? Este sábado quiero ir al parque. ¿Te gustaría venir conmigo? Podemos comer helado y pasear. ¡Espero tu respuesta! — María
 
-```
-## Writing Feedback
+**Language Bank:**
+- Querido/a... (亲爱的...)
+- ¿Cómo estás? (你好吗？)
+- ¿Te gustaría...? (你愿意...吗？)
+- Podemos... (我们可以...)
+- ¡Espero tu respuesta! (等你回复！)
 
-### Overall: [Brief positive comment]
-
-### Content: [X/5]
-- [Comment on structure and completeness]
-
-### Grammar: [X/5]
-- [Error 1]: "original" → "corrected" (reason)
-- [Error 2]: "original" → "corrected" (reason)
-
-### Vocabulary: [X/5]
-- [Good word choice noted]
-- [Suggestion for improvement]
-
-### Style: [X/5]
-- [Comment on register, tone, connectors]
-
-### Improved Version
-[Provide a polished rewrite of key sentences or the full text, showing how it could sound at the next level up]
-```
-
-## Phase 3: Revision
-
-- Ask the user to revise based on feedback
-- Review the revision
-- If improved, celebrate the progress
-- If still struggling, identify the one most impactful thing to fix and focus on that
-
-## Exercise Block (Supplementary)
-
-### Exercise 1: Sentence Combining
-Give simple sentences, ask the user to combine them into complex ones using connectors.
-
-### Exercise 2: Register Transformation
-Give a formal text, ask user to rewrite informally (or vice versa).
-
-### Exercise 3: Error Correction
-Give a short text with 5-8 errors, ask user to find and fix them.
-
-### Exercise 4: Paragraph Building
-Give a topic sentence, ask the user to write the supporting sentences.
-
-## Tone
-
-- Supportive but honest — writing is vulnerable, encourage effort
-- Focus on communication first, accuracy second
-- Always start with what's good before pointing out errors
-- For lower levels: prioritize clarity over sophistication
-- For higher levels: push for nuance, style, and precision
-- Frame corrections as "here's how to make it even better" not "this is wrong"
+**Your turn:** 写一封邮件，邀请你的朋友周末去咖啡店。

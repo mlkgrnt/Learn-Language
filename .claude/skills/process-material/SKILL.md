@@ -1,15 +1,17 @@
 ---
 name: process-material
-description: Import and process learning materials — PDF conversion, chapter splitting, vocabulary/grammar extraction
-user-invocable: true
-allowed-tools:
-  - Read
-  - Write
-  - Edit
-  - Glob
-  - Grep
-  - Bash
-  - AskUserQuestion
+description: >
+  Import and process learning materials - PDF conversion, chapter splitting,
+  vocabulary/grammar extraction. Run before /learn-language if you have raw materials.
+version: 1.0.0
+author: ClementineLam
+trigger:
+  - "/process-material"
+  - "/处理教材"
+tags:
+  - education
+  - material-processing
+  - pdf
 ---
 
 # Material Processor
